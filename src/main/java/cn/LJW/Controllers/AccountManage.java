@@ -124,6 +124,12 @@ public class AccountManage extends MyDispatchServlet {
         }
     }
 
+//    @RequestMapping(value = "/fileUpload")
+//    @ResponseBody
+//    public void Register(){
+//        System.out.println("欢迎回来...");
+//    }
+
     private String getJSONString(User user){
         return new JSONObject(user).toString();
     }

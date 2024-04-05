@@ -27,4 +27,5 @@
 
     <context:component-scan base-package="cn.LJW.Controllers"/>
 
+    <mvc:default-servlet-handler/>
 </beans>

@@ -30,11 +30,11 @@
         <property name="password" value=""/>
     </bean>
 
-    <bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate" scope="singleton">
+    <bean id="stringRedisTemplate" class="org.springframework.data.redis.core.StringRedisTemplate">
         <property name="connectionFactory" ref="jedisConnectionFactory"/>
     </bean>
 
-    <bean id="serverSocket" class="java.net.ServerSocket" scope="singleton">
+    <bean id="serverSocket" class="java.net.ServerSocket">
         <constructor-arg name="port" value="5786"/>
     </bean>
 
