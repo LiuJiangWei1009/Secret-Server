@@ -32,7 +32,7 @@ import java.util.*;
 @Controller
 public class AccountManage extends MyDispatchServlet {
 
-    private static Map<String, OnlineSession> sessionMap = new HashMap<>();
+    private static final Map<String, OnlineSession> sessionMap = new HashMap<>();
 
     @Autowired
     public StringRedisTemplate stringRedisTemplate;
@@ -111,11 +111,11 @@ public class AccountManage extends MyDispatchServlet {
     @RequestMapping(value = "/register")
     @ResponseBody
     public String Register(String type,User requestUser){
-        SqlSession session=sqlSessionFactory.openSession(true);
-        UserDao userDao=session.getMapper(UserDao.class);
+        SqlSession session = sqlSessionFactory.openSession(true);
+        UserDao userDao = session.getMapper(UserDao.class);
         if(type.equals("0")){
-            User user=userDao.findByName(requestUser.getName());
-            if(user==null) return getIntJSONString(0);
+            User user = userDao.findByName(requestUser.getName());
+            if(user == null) return getIntJSONString(0);
             else return getIntJSONString(1);
         }else {
             userDao.registerUser(requestUser);
@@ -123,12 +123,6 @@ public class AccountManage extends MyDispatchServlet {
             return getIntJSONString(2);
         }
     }
-
-//    @RequestMapping(value = "/fileUpload")
-//    @ResponseBody
-//    public void Register(){
-//        System.out.println("欢迎回来...");
-//    }
 
     private String getJSONString(User user){
         return new JSONObject(user).toString();
