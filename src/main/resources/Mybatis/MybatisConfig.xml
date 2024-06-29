@@ -8,6 +8,7 @@
     <typeAliases>
         <typeAlias type="cn.LJW.Entities.User.User" alias="user"/>
         <typeAlias type="cn.LJW.Entities.Resource.FileBean" alias="fileBean"/>
+        <typeAlias type="cn.LJW.Entities.Feedback.FeedbackBean" alias="feedbackBean"/>
     </typeAliases>
 
     <environments default="development">
@@ -25,5 +26,6 @@
     <mappers>
         <mapper resource="Mybatis/Mappers/UserMapper.xml"/>
         <mapper resource="Mybatis/Mappers/ResourceMapper.xml"/>
+        <mapper resource="Mybatis/Mappers/FeedbackMapper.xml"/>
     </mappers>
 </configuration>
